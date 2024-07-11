@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdint.h>
+
+
+int main ()
+{
+  int8_t ArraySize1;
+  int8_t ArraySize2;
+  printf ("Array swaping program\n");
+  printf ("Enter no. of elements of Array-1 and Array-2: ");
+  scanf ("%hhd %hhd", &ArraySize1, &ArraySize2);
+  
+  uint8_t Array1[ArraySize1];
+  uint8_t Array2[ArraySize2];
+
+  for (int i = 0; i < ArraySize1; i++)
+	{
+	  printf ("Enter element %d of Array-1: ", i);
+	  scanf ("%hhu", &Array1[i]);
+	}
+  for (int i = 0; i < ArraySize2; i++)
+	{
+	  printf ("Enter element %d of Array-2: ", i);
+	  scanf ("%hhu", &Array2[i]);
+
+	}
+
+  printf ("content of array before swap:\n");
+
+  for (int i = 0; i < ArraySize1; i++)
+	{
+
+	  printf ("%d   ",Array1[i]);
+	}
+	printf("\n");
+	
+  for (int i = 0; i < ArraySize2; i++)
+	{
+
+	  printf ("%d   ",Array2[i]);
+	}
+	printf("\n");
+	
+	uint8_t temp;
+	for (int i=0; i<(ArraySize1 < ArraySize2 ? ArraySize2 : ArraySize1);i++)
+{	
+temp= Array1[i];
+Array1[i]=Array2[i];
+Array2[i] =temp;
+}
+
+
+
+
+printf ("content of array after swap:\n");
+
+  for (int i = 0; i < ArraySize1; i++)
+	{
+
+	  printf ("%d   ",Array1[i]);
+	}
+	printf("\n");
+	
+  for (int i = 0; i < ArraySize1; i++)
+	{
+
+	  printf ("%d   ",Array2[i]);
+	}
+printf("\n");
+getchar();
+return 0;
+}
